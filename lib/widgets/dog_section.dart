@@ -9,7 +9,7 @@ class DogSection extends StatelessWidget {
     required this.bred,
   });
 
-  final List? images;
+  final String? images;
   final int index;
   final String bred;
 
@@ -24,7 +24,7 @@ class DogSection extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.network(
-              images?[index],
+              images ?? '',
               fit: BoxFit.fill,
             ),
           ),
@@ -34,11 +34,16 @@ class DogSection extends StatelessWidget {
           left: 0,
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.grey[800]?.withOpacity(0.7),
-              borderRadius: BorderRadius.circular(5)
+                color: Colors.grey[800]?.withOpacity(0.7),
+                borderRadius: BorderRadius.circular(5)),
+            padding: const EdgeInsets.all(5),
+            child: Text(
+              bred,
+              style: Theme.of(context)
+                  .textTheme
+                  .labelLarge
+                  ?.copyWith(color: Colors.white),
             ),
-            padding:const EdgeInsets.all(5),
-            child: Text(bred,style: Theme.of(context).textTheme.labelLarge?.copyWith(color: Colors.white),),
           ),
         )
       ],

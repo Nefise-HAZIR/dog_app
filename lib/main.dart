@@ -1,4 +1,4 @@
-import 'package:dog_app/screens/home_screen.dart';
+import 'package:dog_app/features/home/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
