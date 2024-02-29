@@ -1,4 +1,5 @@
 import 'package:dog_app/features/home/screen/home_screen.dart';
+import 'package:dog_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,14 +17,14 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       builder: (_,child){
-        return MaterialApp(
+        return MaterialApp.router(
+          routerConfig: AppRoutes.router,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:const HomeScreen(),
     );
       },
     );
